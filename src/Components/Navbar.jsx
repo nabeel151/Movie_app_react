@@ -5,15 +5,15 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-[#1b1b1b] to-black border-b border-gray-800 px-8 py-3">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-        
+
         {/* LEFT */}
         <div className="flex items-center gap-4">
-          <Link to="/movies" className="inline-block">
-  <h1 className="text-[#6ac045] text-4xl font-bold tracking-tight">
-    YTS
-    <span className="text-[#6ac045] text-xl align-top">MX</span>
-  </h1>
-</Link>
+          <Link to="/" className="inline-block">
+            <h1 className="text-[#6ac045] text-4xl font-bold tracking-tight">
+              YTS
+              <span className="text-[#6ac045] text-xl align-top">MX</span>
+            </h1>
+          </Link>
           <p className="text-gray-400 text-sm hidden lg:block">
             HD movies at the smallest file size.
           </p>
