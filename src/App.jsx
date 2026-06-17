@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import MoviesList from "./pages/MoviesList";
-import MovieDetail from "./pages/MovieDetail";
+import MoviesList from "./Pages/MoviesList";
+import MovieDetail from "./Pages/MovieDetail";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
