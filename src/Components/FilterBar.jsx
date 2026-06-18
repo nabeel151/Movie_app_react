@@ -18,7 +18,13 @@ export default function FilterBar({ filters, setFilters, onSearch }) {
 
   return (
     <div className="w-full bg-[#151515] py-4 sm:py-6 border-b border-gray-800 rounded-xl">
+
       <div className="w-full px-4 sm:px-6">
+
+        {/* TITLE */}
+        <h1 className="text-center text-[#6ac045] font-bold text-2xl sm:text-3xl mb-4 sm:mb-6 tracking-tight">
+          YTS YIFY Movies
+        </h1>
 
         {/* SEARCH AREA */}
         <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -40,7 +46,6 @@ export default function FilterBar({ filters, setFilters, onSearch }) {
         </div>
 
         {/* FILTERS DROPDOWN GRID */}
-        {/* Adjusted to grid-cols-1 -> grid-cols-2 -> grid-cols-3 -> lg:grid-cols-5 for perfect symmetry */}
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
 
           <select
@@ -91,7 +96,6 @@ export default function FilterBar({ filters, setFilters, onSearch }) {
             <option value="download_count">Popular</option>
           </select>
 
-          {/* This fifth dropdown handles col-span styling rules beautifully on mid-tier viewports */}
           <select
             name="with_rt_ratings"
             value={filters.with_rt_ratings}
