@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function MovieCard({ movie }) {
    const navigate = useNavigate();
   return (
-    <div className="rounded overflow-hidden h-[520px] flex flex-col ">
+    <div className="rounded overflow-hidden h-520px flex flex-col ">
 
       {/* IMAGE SECTION (ONLY THIS HAS HOVER BORDER) */}
       <div className="group relative border-5 border-transparent hover:border-[#eaeee9] overflow-hidden">

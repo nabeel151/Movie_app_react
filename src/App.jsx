@@ -6,17 +6,30 @@ import Signup from "./Pages/Signup";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
+import MoviesListProvider from "./provider/MovieListProvider";
+import { MovieDetailProvider } from "./provider/MovieDetailProvider";
+
 function App() {
+  return (
+    <MoviesListProvider>
+      <MovieDetailProvider>
+        <MainLayout />
+      </MovieDetailProvider>
+    </MoviesListProvider>
+  );
+}
+
+function MainLayout() {
   return (
     <div className="bg-[#111] min-h-screen text-white">
       <Navbar />
 
       <div className="pt-20">
         <Routes>
-        <Route path="/" element={<MoviesList />} />
+          <Route path="/" element={<MoviesList />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
           <Route path="/login" element={<Login />} />
-  <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
 

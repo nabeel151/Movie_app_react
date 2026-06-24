@@ -1,34 +1,21 @@
-import { MOVIES_LIST_ENDPOINT } from "./config";
+import axios from "axios";
+
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const fetchMoviesAPI = async (page, filters) => {
-  let url = `${MOVIES_LIST_ENDPOINT}?page=${page}`;
+  const url = `${BASE_URL}/api/v2/list_movies.json`;
 
-  if (filters.query_term) {
-    url += `&query_term=${filters.query_term}`;
-  }
+  const params = {
+    page,
+    sort_by: filters.sort_by,
+    quality: filters.quality,
+    genre: filters.genre,
+    minimum_rating: filters.minimum_rating,
+    query_term: filters.query_term,
+    with_rt_ratings: filters.with_rt_ratings,
+  };
 
-  if (filters.quality) {
-    url += `&quality=${filters.quality}`;
-  }
+  const res = await axios.get(url, { params });
 
-  if (filters.genre) {
-    url += `&genre=${filters.genre}`;
-  }
-
-  if (filters.minimum_rating !== "") {
-    url += `&minimum_rating=${filters.minimum_rating}`;
-  }
-
-  if (filters.sort_by) {
-    url += `&sort_by=${filters.sort_by}`;
-  }
-
-  if (filters.with_rt_ratings) {
-    url += `&with_rt_ratings=${filters.with_rt_ratings}`;
-  }
-
-  const res = await fetch(url);
-  const data = await res.json();
-
-  return data?.data?.movies || [];
+  return res.data.data.movies;
 };
